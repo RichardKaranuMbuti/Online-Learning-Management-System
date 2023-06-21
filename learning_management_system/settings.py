@@ -130,3 +130,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # LOGIN_REDIRECT_URL = 'users:login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+AUTH_USER_MODEL = 'users.UserModel' 
