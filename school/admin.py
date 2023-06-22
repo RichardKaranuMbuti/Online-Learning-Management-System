@@ -2,10 +2,11 @@ from django.contrib import admin
 from .models import Department, Unit
 
 # Register your models here.
-@admin.site.register(Unit)
+@admin.register(Unit)
 class UnitAdmin(admin.ModelAdmin):
-	pass
+	list_display = ['name', 'code', 'department', 'description']
 
-@admin.site.register(Department)
+@admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
-	pass
+	list_display = ['name', 'code', 'description']
+
