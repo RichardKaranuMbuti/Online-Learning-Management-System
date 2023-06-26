@@ -1,0 +1,61 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+footer {
+	position:absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+section#features {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	padding-bottom: 70px;
+}
+
+.fa-instagram {
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+
+}
+
+.fa-whatsapp {
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.fa-twitter{
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+}
+
+.fa-facebook{
+	color: black;
+	font-size: 20px;
+	margin: 10px;
+}
+
+input, textarea{
+	padding: 5px;
+}
+
+section#features, section#testimonials, section#contact, section#about_us{
+	margin-top: 56px;
+}
+
+
+video{
+	width: 40%;
+	height: auto;
+}

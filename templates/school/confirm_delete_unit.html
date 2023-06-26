@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Unit{% endblock title %}
+{% block content %}
+<div class="card container mt-5 col-md-5 text-center">
+	<h1 class="card-title text-center">Add a New Unit</h1>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<h1>Are you sure you want to <span class="text-danger">delete</span> <em>{{unit.name}}</em> ?</h1>
+		<p>Once done, this action cannot be reversed.</p>
+		<a href="{% url 'school:manage_units' %}" class="btn btn-danger m-2">Cancel</a>
+		<button type="submit" class="btn btn-success m-2">Yes</button>
+	</form>
+</div>
+{% endblock content %}

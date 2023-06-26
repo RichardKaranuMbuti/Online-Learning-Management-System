@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{unit.name}}{% endblock title %}
+{% block content %}
+<div class="container py-3" style="margin:0; min-width: 100vw; background-color: black;">
+	<div class="row">
+		<p class="bg-white my-3">
+			<a href="#">Computer Science > </a>
+			<a href="#">{{unit.name}}</a>
+		</p>
+		<img class="col-md-6" src="{{unit.image.url}}" alt="" style="max-width: 100%">
+		<div class="col-md-5" style="max-width: 450px">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">{{unit.name}}</h5>
+					<p class="card-text">{{unit.creator}}</p>
+					<p class="card-text">
+						Have a peek at the course material and solidify your decision to enroll in this course!
+						Check out the <a href="#course-description">Course Description</a>,
+						<a href="#course-outline">Course Outline</a>,
+						<a href="#past-papers">Papers Now</a> and other course resources such as
+						<a href="#videos">Videos!</a>
+					</p>
+					<a href="unit_enrol.html"><button class="btn btn-primary">Enrol</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="margin-left: 20px;">
+	<h1 id="course-description" class="mt-4">Course Description:</h1>
+	<p>
+		{{unit.description}}
+	</p>
+</div>
+
+<section style="margin-left: 20px;">
+	<h1 id="course-outline">Course Outline:</h1>
+	<p>
+		1. Introduction to Discrete Mathematics
+		<ul>
+			<li>Overview of discrete mathematics and its applications</li>
+			<li>Logic and proofs: basic concepts, propositional logic, predicate logic</li>
+			<li>Sets, operations on sets, set identities</li>
+			<li>Relations and functions</li>
+		</ul>
+	</p>
+
+	<p>
+		2. Combinatorics and Counting
+		<ul>
+			<li>Basic counting principles: permutations and combinations</li>
+			<li>Binomial coefficients and their properties</li>
+			<li>Inclusion-Exclusion principle</li>
+			<li>Pigeonhole principle and its applications</li>
+		</ul>
+	</p>
+
+	<p>
+		3. Graph Theory
+		<ul>
+			<li>Introduction to graphs: definitions, terminology</li>
+			<li>Types of graphs: trees, cycles, paths, connectivity</li>
+			<li>Graph representations and isomorphism</li>
+			<li>Graph algorithms: traversal, shortest paths, spanning trees</li>
+		</ul>
+	</p>
+
+	<p>
+		4. Discrete Structures
+		<ul>
+			<li>Recurrence relations and their solutions</li>
+			<li>Generating functions and their applications</li>
+			<li>Finite state machines and automata theory</li>
+			<li>Introduction to formal languages and grammars</li>
+		</ul>
+	</p>
+
+	<p>
+		5. Discrete Probability
+		<ul>
+			<li>Probability spaces and events</li>
+			<li>Conditional probability and independence</li>
+			<li>Random variables and probability distributions</li>
+			<li>Expected value and variance</li>
+		</ul>
+	</p>
+
+	<p>
+		6. Boolean Algebra and Logic Circuits
+		<ul>
+			<li>Boolean algebra: axioms, theorems, and simplification techniques</li>
+			<li>Logic gates and truth tables</li>
+			<li>Boolean functions and their representations</li>
+			<li>Design and analysis of combinational and sequential circuits</li>
+		</ul>
+	</p>
+
+	<p>
+		7. Cryptography and Number Theory
+		<ul>
+			<li>Introduction to cryptography: encryption, decryption, and security</li>
+			<li>Number theory basics: primes, divisibility, modular arithmetic</li>
+			<li>Cryptographic algorithms: RSA, Diffie-Hellman, AES</li>
+			<li>Error detection and correction codes</li>
+		</ul>
+	</p>
+
+	<p>
+		8. Applications of Discrete Mathematics
+		<ul>
+			<li>Introduction to optimization problems</li>
+			<li>Network flows and matching theory</li>
+			<li>Introduction to linear programming</li>
+			<li>Applications in computer science and information technology</li>
+		</ul>
+	</p>
+
+	<p>
+		9. Advanced Topics (Optional)
+		<ul>
+			<li>Advanced graph algorithms: maximum flow, minimum cut, graph coloring</li>
+			<li>Combinatorial optimization: traveling salesman problem, knapsack problem</li>
+			<li>Advanced probability theory: Markov chains, random walks</li>
+		</ul>
+	</p>
+
+	<p>
+		10. Review and Final Assessment
+		<ul>
+			<li>Recap of key concepts and techniques covered in the course</li>
+			<li>Practice exercises and problem-solving sessions</li>
+			<li>Final assessment to evaluate understanding and proficiency</li>
+		</ul>
+	</p>
+</section>
+
+<div id="videos" class="d-flex align-items-center justify-content-center flex-column">
+	<h1>Tutorial Videos</h1>
+	<video
+		class="embed-responsive-item"
+		src="{% static 'units_template/static/dummy_media/Dummy Video For Website.mp4' %}">
+	</video>
+</div>
+
+<div id="past-papers" class="d-flex align-items-center justify-content-center flex-column my-4">
+	<h1>Past Papers</h1>
+	<div class="mb-3">
+		<button class="btn btn-outline-success rounded-pill text-dark mx-4">Share</button>
+		<button class="btn btn-outline-success rounded-pill text-dark">Download</button>
+	</div>
+	<img src="{% static 'units_template/static/dummy_media/past_paper.jpg' %}" alt="">
+</div>
+{% endblock content %}

@@ -140,4 +140,10 @@ GitHub.sublime-settings
 .history
 
 .dev
-db.sqlite3
+
+# Test Data
+units_template/
+dummy-images/
+media/
+
+todo.txt

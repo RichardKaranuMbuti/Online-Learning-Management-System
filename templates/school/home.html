@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Homepage{% endblock title %}
+{% block content %}
+<!-- <a href="{% url 'school:department' %}">Department</a> -->
+<!-- <a href="{% url 'school:display_units' %}">Unit</a> -->
+<h1>Homepage</h1>
+<h3 class="mx-3">Units</h3>  
+<div class="container m-1">
+    <!-- <a href="{% url 'school:manage_units' %}">Manage Units</a> -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+		{% for unit in units %}
+        <div class="col mb-4">
+			<div class="card p-3">
+				<img src="{{unit.image.url}}" alt="">
+				<a href="{{unit.get_absolute_url}}" class="card-title">{{unit.name}}</a>
+				<p class="card-text">{{unit.code}}</p>
+				<p class="card-text">{{unit.creator}}</p>
+				<p class="card-text">{{unit.rating}}</p>
+				<p class="card-text">{{unit.price}}</p>
+			</div>
+        </div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock content %}

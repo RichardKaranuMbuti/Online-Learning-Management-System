@@ -5,9 +5,15 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% include 'dependancies/css.html' %}
-	<title>{% block title %}{% endblock title %}</title>
+	<title>LMS | {% block title %}{% endblock title %}</title>
 </head>
-<body>
-	{% block content %}{% endblock content %}
+<body class="h-100">
+	{% include 'components/navbar.html' %}
+	<section style="padding-bottom: 50px;">
+		{% block content %}{% endblock content %}
+	</section>
+	{% include 'components/footer.html' %}
+	{% include 'dependancies/js.html' %}
 </body>
 </html>
+

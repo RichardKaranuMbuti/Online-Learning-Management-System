@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Manage Units{% endblock title %}
+{% block content %}
+<a href="{% url 'school:create_unit' %}" class="btn btn-primary">Add New</a>
+<div class="container">
+	<div class="row">
+		{% for unit in units %}
+			<div class="card col-md-5 m-md-3 p-md-3">
+				<img src="{{unit.image.url}}" alt="">
+				<a href="{{unit.get_absolute_url}}" class="card-title">{{unit.name}}</a>
+				<p>{{unit.code}}</p>
+				<p>{{unit.creator}}</p>
+				<p>{{unit.rating}}</p>
+				<p>{{unit.price}}</p>
+				<a href="{{unit.get_absolute_url}}" class="btn btn-primary">View</a>
+				<a href="{% url 'school:edit_unit' unit.slug %}" class="btn btn-success">Edit</a>
+				<a href="{% url 'school:delete_unit' unit.slug %}" class="btn btn-danger">Delete</a>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock content %}

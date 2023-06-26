@@ -1,26 +1,18 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import views
-from django.views import View
-from .forms import SignupForm, LoginForm
+from django.views import generic
+from .forms import CustomUserCreationForm
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
 
 # Create your views here.
-class SignUpView(View):
-    def get(self, request):
-        form = SignupForm()
-        context = {'form': form}
-        return render(request, 'users/signup.html', context)
+class SignUpView(generic.CreateView):
+    template_name = 'users/signup.html'
+    form_class = CustomUserCreationForm
+    success_url = reverse_lazy("users:otp")
 
-    def post(self, request):
-        form = SignupForm(request.POST)
-        context = {'form': form}
-        if form.is_valid():
-            form.save()
-            return redirect('users:login')  # Redirect to OTP confirmation page
-        return render(request, 'users/signup.html', context)
+class CustomLoginView(LoginView):
+    template_name = 'school/index.html'
+    fields = '__all__',
 
-    
-class LoginView(views.LoginView):
-    template_name = 'users/login.html'
-    form_class = LoginForm
-    #change to redirect to home page
-    next_page = 'users:login'
+class OTPVerification(generic.TemplateView):
+    template_name = 'users/otp_verification.html'

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Verification{% endblock title %}
+
+{% block content %}
+<div class="card container col-md-6 mt-5">
+	<di class="card-body text-center">
+		<h1 class="card-title fs-4">Send OTP verification code to: <span class="text-primary">0712345678</span>?</h1>
+		<div class="row justify-content-center">
+			<div class="col-md-2">
+				<input class="form-control text-center" type="text" maxlength="1">
+			</div>
+			<div class="col-md-2">
+				<input class="form-control text-center" type="text" maxlength="1">
+			</div>
+			<div class="col-md-2">
+				<input class="form-control text-center" type="text" maxlength="1">
+			</div>
+			<div class="col-md-2">
+				<input class="form-control text-center" type="text" maxlength="1">
+			</div>
+		</div>
+	<div class="row justify-content-center mt-3">
+		<div class="col-md-6">
+			<button class="btn btn-primary btn-block">Send Code</button>
+		</div>
+	</div>
+	<div class="row justify-content-center mt-2">
+		<div class="col-md-6">
+			<button type="submit" class="btn btn-success btn-block">Confirm</button>
+		</div>
+	</div>
+	<div class="row justify-content-center mt-2">
+		<div class="col-md-6">
+			<a href="#"><button class="btn btn-danger btn-block">Edit number</button></a>
+		</div>
+	</div>
+</div>
+	{% endblock content %}
